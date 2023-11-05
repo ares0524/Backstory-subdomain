@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
         <a href="http://localhost:3000" className="flex items-center auth-logo">
-            <img src="/assets/images/logo.png" className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+            <Image width={60} height={36} src="/assets/images/logo.png" className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Backstory</span>
         </a>
 

@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Header from "../components/layout/_header"
 
 export default function CollectionProfile() {
@@ -44,7 +45,7 @@ export default function CollectionProfile() {
                     <li className="pb-3 sm:pb-4">
                         <div className="flex items-center space-x-4">
                             <div className="flex-shrink-0">
-                                <img className="w-[40px] h-[70px]" src="/assets/images/dashboard/1.png" style={{objectFit:'cover'}} alt="Image 1" />
+                                <Image width={40} height={70} src="/assets/images/dashboard/1.png" style={{objectFit:'cover'}} alt="Image 1" />
                             </div>
                             <div className="flex-1 min-w-0">
                                 <p className="text-xl font-bold text-gray-900 truncate dark:text-white">
@@ -63,7 +64,7 @@ export default function CollectionProfile() {
                     <li className="pb-3 sm:pb-4">
                         <div className="flex items-center space-x-4">
                             <div className="flex-shrink-0">
-                                <img className="w-[40px] h-[70px]" src="/assets/images/dashboard/2.png" style={{objectFit:'cover'}} alt="Image 1" />
+                                <Image width={40} height={70} src="/assets/images/dashboard/2.png" style={{objectFit:'cover'}} alt="Image 1" />
                             </div>
                             <div className="flex-1 min-w-0">
                                 <p className="text-xl font-bold text-gray-900 truncate dark:text-white">
@@ -82,7 +83,7 @@ export default function CollectionProfile() {
                     <li className="pb-3 sm:pb-4">
                         <div className="flex items-center space-x-4">
                             <div className="flex-shrink-0">
-                                <img className="w-[40px] h-[70px]" src="/assets/images/dashboard/3.png" style={{objectFit:'cover'}} alt="Image 1" />
+                                <Image width={40} height={70} src="/assets/images/dashboard/3.png" style={{objectFit:'cover'}} alt="Image 1" />
                             </div>
                             <div className="flex-1 min-w-0">
                                 <p className="text-xl font-bold text-gray-900 truncate dark:text-white">
@@ -101,7 +102,7 @@ export default function CollectionProfile() {
                     <li className="pb-3 sm:pb-4">
                         <div className="flex items-center space-x-4">
                             <div className="flex-shrink-0">
-                                <img className="w-[40px] h-[70px]" src="/assets/images/dashboard/4.png" style={{objectFit:'cover'}} alt="Image 1" />
+                                <Image width={40} height={70} src="/assets/images/dashboard/4.png" style={{objectFit:'cover'}} alt="Image 1" />
                             </div>
                             <div className="flex-1 min-w-0">
                                 <p className="text-xl font-bold text-gray-900 truncate dark:text-white">
@@ -120,7 +121,7 @@ export default function CollectionProfile() {
                     <li className="pb-3 sm:pb-4">
                         <div className="flex items-center space-x-4">
                             <div className="flex-shrink-0">
-                                <img className="w-[40px] h-[70px]" src="/assets/images/dashboard/5.png" style={{objectFit:'cover'}} alt="Image 1" />
+                                <Image width={40} height={70} src="/assets/images/dashboard/5.png" style={{objectFit:'cover'}} alt="Image 1" />
                             </div>
                             <div className="flex-1 min-w-0">
                                 <p className="text-xl font-bold text-gray-900 truncate dark:text-white">
@@ -139,7 +140,7 @@ export default function CollectionProfile() {
                     <li className="pb-3 sm:pb-4">
                         <div className="flex items-center space-x-4">
                             <div className="flex-shrink-0">
-                                <img className="w-[40px] h-[70px]" src="/assets/images/dashboard/6.png" style={{objectFit:'cover'}} alt="Image 1" />
+                                <Image width={40} height={70} src="/assets/images/dashboard/6.png" style={{objectFit:'cover'}} alt="Image 1" />
                             </div>
                             <div className="flex-1 min-w-0">
                                 <p className="text-xl font-bold text-gray-900 truncate dark:text-white">
