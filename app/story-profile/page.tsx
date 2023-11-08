@@ -2,8 +2,11 @@
 
 import { useState } from "react";
 import Header from "../components/layout/_header"
-import Story from "./story";
 import dynamic from "next/dynamic";
+import Detail from "./detail";
+import ChartTemplate from "../components/chart/doughnut";
+import Stats from "./stats";
+import Manage from "./manage";
 
 const DynamicStoryComponent = dynamic(() => import('./story'), {
     ssr: false
@@ -147,29 +150,25 @@ export default function CollectionProfile() {
                             </li>
                         </ul>
                     <div className="relative flex flex-col min-w-0 break-words w-full mb-6 rounded">
-                        <div className="px-4 py-5 flex-auto">
-                        <div className="tab-content tab-space">
-                            <div className={openTab === 1 ? "block" : "hidden"} id="link1">
-                                <div className="pt-2">
-                                    <DynamicStoryComponent />
+                        <div className="py-3 flex-auto">
+                            <div className="tab-content tab-space">
+                                <div className={openTab === 1 ? "block" : "hidden"} id="link1">
+                                    <div className="pt-2">
+                                        <DynamicStoryComponent />
+                                    </div>
+                                </div>
+                                <div className={openTab === 2 ? "block" : "hidden"} id="link2">
+                                    <div className="pt-2">
+                                        <Detail />
+                                    </div>
+                                </div>
+                                <div className={openTab === 3 ? "block" : "hidden"} id="link3">
+                                    <Stats />
+                                </div>
+                                <div className={openTab === 4 ? "block" : "hidden"} id="link4">
+                                    <Manage />
                                 </div>
                             </div>
-                            <div className={openTab === 2 ? "block" : "hidden"} id="link2">
-                                <div id="changePasswordDiv">
-                                    
-                                </div>
-                            </div>
-                            <div className={openTab === 3 ? "block" : "hidden"} id="link3">
-                                <div className="flex">
-                                    
-                                </div>
-                            </div>
-                            <div className={openTab === 4 ? "block" : "hidden"} id="link4">
-                                <div className="flex">
-                                    
-                                </div>
-                            </div>
-                        </div>
                         </div>
                     </div>
                     </div>
