@@ -50,8 +50,8 @@ export default function Manage() {
                         <button className="text-white ml-4 bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none" onClick={generateImage}>Generate</button>
                       </div>
                       <div className="w-full pt-4">
-                        <div className="w-[300px] h-[600px] border-2 border-gray-600 rounded-md m-auto">
-                            <Image width={400} height={800} alt="Story Cover" src="/assets/images/story-profile/story-cover.png" />
+                        <div className="w-[1024px] h-[310px] border-2 border-gray-600 rounded-md m-auto">
+                            <Image width={1024} height={300} className="mt-1" alt="Collection Cover" src="/assets/images/collection-profile/collection-cover.png" />
                         </div>
                       </div>
                   </div>
