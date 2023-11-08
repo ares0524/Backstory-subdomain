@@ -1,38 +1,17 @@
-import Image from "next/image"
-import Header from "../components/layout/_header"
+"use client"
 
-export default function CollectionProfile() {
+import Image from "next/image"
+
+export default function StoriesList() {
+
+    const goToStoryProfilePage = () => {
+        window.location.href = '/story-profile';
+    }
+
     return (
         <>
-            <Header isLoggedIn={true} />
-            <div className="w-full pt-[80px] px-[40px]">
-                <nav className="flex" aria-label="Breadcrumb">
-                    <ol className="inline-flex items-center space-x-1 md:space-x-3">
-                        <li className="inline-flex items-center">
-                            <a href="#" className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
-                                <svg className="w-3 h-3 mr-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
-                                </svg>
-                                Dashboard
-                            </a>
-                        </li>
-                        <li>
-                            <div className="flex items-center">
-                                <svg className="w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4"/>
-                                </svg>
-                                <span className="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">Collections</span>
-                            </div>
-                        </li>
-                    </ol>
-                </nav>
-
-                <div className="py-[20px] flex justify-between items-center">
-                    <p className="text-2xl font-bold">Collections</p>
-                    <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add Collection</button>
-                </div>
-
-                <ul className="w-full divide-y divide-gray-200 dark:divide-gray-700">
+            <div className="flex w-full">
+            <ul className="w-full divide-y divide-gray-200 dark:divide-gray-700">
                     <li className="pb-3 sm:pb-4">
                         <div className="flex items-center space-x-4">
                             <div className="flex-shrink-0">
@@ -46,11 +25,11 @@ export default function CollectionProfile() {
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ...
                                 </p>
                                 <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-                                    Created on May 5, 2023 &#8226; 23 Stories
+                                    Published on May 5, 2023 &#8226; Written by Jhon Doe
                                 </p>
                             </div>
                             <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Manage</button>
+                                <button onClick={goToStoryProfilePage} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Manage</button>
                             </div>
                         </div>
                     </li>
@@ -68,11 +47,11 @@ export default function CollectionProfile() {
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ...
                                 </p>
                                 <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-                                    Created on May 5, 2023 &#8226; 54 Stories
+                                    Published on May 5, 2023 &#8226; Written by Jhon Doe
                                 </p>
                             </div>
                             <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Manage</button>
+                                <button onClick={goToStoryProfilePage} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Manage</button>
                             </div>
                         </div>
                     </li>
@@ -90,11 +69,11 @@ export default function CollectionProfile() {
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ...
                                 </p>
                                 <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-                                    Created on May 5, 2023 &#8226; 36 Stories
+                                    Published on May 5, 2023 &#8226; Written by Jhon Doe
                                 </p>
                             </div>
                             <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Manage</button>
+                                <button onClick={goToStoryProfilePage} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Manage</button>
                             </div>
                         </div>
                     </li>
@@ -112,11 +91,11 @@ export default function CollectionProfile() {
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ...
                                 </p>
                                 <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-                                    Created on May 5, 2023 &#8226; 23 Stories
+                                    Published on May 5, 2023 &#8226; Written by Jhon Doe
                                 </p>
                             </div>
                             <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Manage</button>
+                                <button onClick={goToStoryProfilePage} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Manage</button>
                             </div>
                         </div>
                     </li>
@@ -134,11 +113,11 @@ export default function CollectionProfile() {
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ...
                                 </p>
                                 <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-                                    Created on May 5, 2023 &#8226; 23 Stories
+                                    Published on May 5, 2023 &#8226; Written by Jhon Doe
                                 </p>
                             </div>
                             <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Manage</button>
+                                <button onClick={goToStoryProfilePage} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Manage</button>
                             </div>
                         </div>
                     </li>
@@ -156,11 +135,11 @@ export default function CollectionProfile() {
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ...
                                 </p>
                                 <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-                                    Created on May 5, 2023 &#8226; 23 Stories
+                                    Published on May 5, 2023 &#8226; Written by Jhon Doe
                                 </p>
                             </div>
                             <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Manage</button>
+                                <button onClick={goToStoryProfilePage} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Manage</button>
                             </div>
                         </div>
                     </li>
