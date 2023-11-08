@@ -6,7 +6,7 @@ export default function Home() {
     <>
         <a href="/" className="flex items-center auth-logo">
             <Image width={60} height={36} src="/assets/images/logo.png" className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
-            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">BackStory</span>
+            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Teloria</span>
         </a>
 
         <div className="flex flex-col items-center md:flex-row md:h-screen justify-center">
