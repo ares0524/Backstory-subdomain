@@ -42,7 +42,7 @@ export default function Manage() {
     return (
         <>
             <div className="flex w-full">
-                <div className="w-3/4 m-auto">
+                <div className="xl:w-3/4 w-full m-auto">
                   <div className="my-2 ml-6 space-y-1 list-decimal list-inside p-4 border-2 border-gray-600 rounded-md min-h-[500px]">
                       <p className="text-white text-2xl font-bold">Generate Cover Image</p>
                       <div className="pt-2 flex items-end">
@@ -50,7 +50,7 @@ export default function Manage() {
                         <button className="text-white ml-4 bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none" onClick={generateImage}>Generate</button>
                       </div>
                       <div className="w-full pt-4">
-                        <div className="w-[1024px] h-[310px] border-2 border-gray-600 rounded-md m-auto">
+                        <div className="max-w-[1024px] max-h-[310px] border-2 border-gray-600 rounded-md m-auto">
                             <Image width={1024} height={300} className="mt-1" alt="Collection Cover" src="/assets/images/collection-profile/collection-cover.png" />
                         </div>
                       </div>
