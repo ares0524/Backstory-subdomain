@@ -1,7 +1,13 @@
+"use client"
+
 import Image from "next/image"
 import Header from "../components/layout/_header"
+import { useState } from "react"
+import Drawer from "./add-collection";
 
 export default function CollectionProfile() {
+    const [openAddColSidebar, setOpenAddColSidebar] = useState(false);
+
     return (
         <>
             <Header isLoggedIn={true} />
@@ -29,7 +35,7 @@ export default function CollectionProfile() {
 
                 <div className="py-[20px] flex justify-between items-center">
                     <p className="text-2xl font-bold">Collections</p>
-                    <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add Collection</button>
+                    <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onClick={() => setOpenAddColSidebar((openAddColSidebar) => !openAddColSidebar)}>Add Collection</button>
                 </div>
 
                 <ul className="w-full divide-y divide-gray-200 dark:divide-gray-700">
@@ -165,6 +171,8 @@ export default function CollectionProfile() {
                         </div>
                     </li>
                 </ul>
+
+                <Drawer isOpen={openAddColSidebar} setIsOpen={setOpenAddColSidebar} />
             </div>
         </>
     )
