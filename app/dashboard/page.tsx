@@ -1,6 +1,6 @@
 import Header from "../components/layout/_header";
 
-export default function WorldHistory() {
+export default function Dashboard() {
     return (
         <>
             <Header isLoggedIn={true} />
