@@ -23,7 +23,8 @@ export default function Drawer({ isOpen, setIsOpen }: DrawerProps) {
           {/* <header className="p-4 font-bold text-lg">Header</header> */}
         {/* </article> */}
         <div className="py-5 px-5">
-            <p className="text-3xl text-center mt-20">Add Story</p>
+            <p className="text-3xl text-center mt-20 mb-5 text-white">Add Story</p>
+            <p className="text-center text-white">Add a new story to this collection</p>
             <div className="relative z-0 w-full mb-3 group">
                 <div className="mt-10">
                   <input type="text" name="chapter-title" id="chapter-title" className="block py-2.5 px-0 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
@@ -54,6 +55,13 @@ export default function Drawer({ isOpen, setIsOpen }: DrawerProps) {
                 <input type="hidden" />
 
                 <button className="text-white bg-blue-700 w-full mt-10 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add Story</button>
+
+                <div className="relative flex items-center justify-center w-full mt-6 border border-t">
+                    <div className="absolute px-5 bg-[#2f2f2f]">Then</div>
+                </div>
+
+                <p className="text-center text-white">Once you&apos;ve created your story, add the author who is going to write it and upload the cover art for publishing.</p>
+                
             </div>
         </div>
       </section>
