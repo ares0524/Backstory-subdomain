@@ -26,61 +26,60 @@ export default function Story() {
         <>
             <div className="flex w-full">
                 <div className="w-1/6">
-                    <div className="sticky top-50px">
-                      <ul className="mt-2 space-y-1 list-decimal list-inside p-4 mb-3">
-                        <li className="cursor-pointer hover:text-gray-300 flex justify-between">
-                          <span>Chapter 1</span>
-                          <span><small>6.9k</small></span>
-                        </li>
-                        <li className="cursor-pointer hover:text-gray-300 flex justify-between">
-                          <span>Chapter 2</span>
-                          <span><small>6.9k</small></span>
-                        </li>
-                        <li className="cursor-pointer hover:text-gray-300 flex justify-between">
-                          <span>Chapter 3</span>
-                          <span><small>6.9k</small></span>
-                        </li>
-                        <li className="cursor-pointer hover:text-gray-300 flex justify-between">
-                          <span>Chapter 4</span>
-                          <span><small>9k</small></span>
-                        </li>
-                        <li className="cursor-pointer hover:text-gray-300 flex justify-between">
-                          <span>Chapter 5</span>
-                          <span><small>7.5k</small></span>
-                        </li>
-                        <li className="cursor-pointer hover:text-gray-300 flex justify-between">
-                          <span>Chapter 6</span>
-                          <span><small>8.2k</small></span>
-                        </li>
-                        <li className="cursor-pointer hover:text-gray-300 flex justify-between">
-                          <span>Chapter 7</span>
-                          <span><small>5k</small></span>
-                        </li>
-                        <li className="cursor-pointer hover:text-gray-300 flex justify-between">
-                          <span>Chapter 8</span>
-                          <span><small>6.9k</small></span>
-                        </li>
-                        <li className="cursor-pointer hover:text-gray-300 flex justify-between">
-                          <span>Chapter 9</span>
-                          <span><small>7.3k</small></span>
-                        </li>
-                        <li className="cursor-pointer hover:text-gray-300 flex justify-between">
-                          <span>Chapter 10</span>
-                          <span><small>7.2k</small></span>
-                        </li>
-                      </ul>
+                    <ul className="mt-2 space-y-1 list-decimal list-inside p-4 mb-3 sticky top-0">
+                      <li className="cursor-pointer hover:text-gray-300 flex justify-between">
+                        <span>Chapter 1</span>
+                        <span><small>6.9k</small></span>
+                      </li>
+                      <li className="cursor-pointer hover:text-gray-300 flex justify-between">
+                        <span>Chapter 2</span>
+                        <span><small>6.9k</small></span>
+                      </li>
+                      <li className="cursor-pointer hover:text-gray-300 flex justify-between">
+                        <span>Chapter 3</span>
+                        <span><small>6.9k</small></span>
+                      </li>
+                      <li className="cursor-pointer hover:text-gray-300 flex justify-between">
+                        <span>Chapter 4</span>
+                        <span><small>9k</small></span>
+                      </li>
+                      <li className="cursor-pointer hover:text-gray-300 flex justify-between">
+                        <span>Chapter 5</span>
+                        <span><small>7.5k</small></span>
+                      </li>
+                      <li className="cursor-pointer hover:text-gray-300 flex justify-between">
+                        <span>Chapter 6</span>
+                        <span><small>8.2k</small></span>
+                      </li>
+                      <li className="cursor-pointer hover:text-gray-300 flex justify-between">
+                        <span>Chapter 7</span>
+                        <span><small>5k</small></span>
+                      </li>
+                      <li className="cursor-pointer hover:text-gray-300 flex justify-between">
+                        <span>Chapter 8</span>
+                        <span><small>6.9k</small></span>
+                      </li>
+                      <li className="cursor-pointer hover:text-gray-300 flex justify-between">
+                        <span>Chapter 9</span>
+                        <span><small>7.3k</small></span>
+                      </li>
+                      <li className="cursor-pointer hover:text-gray-300 flex justify-between">
+                        <span>Chapter 10</span>
+                        <span><small>7.2k</small></span>
+                      </li>
+                    </ul>
 
-                      <div className="relative">
-                        <div className="absolute inset-0 flex items-center" aria-hidden="true">
-                          <div className="w-full border-t border-gray-300"></div>
-                        </div>
-                        <div className="relative flex justify-center">
-                          <button type="button" className="inline-flex items-center gap-x-1.5 rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-                            Add Chapter
-                          </button>
-                        </div>
+                    <div className="relative">
+                      <div className="absolute inset-0 flex items-center" aria-hidden="true">
+                        <div className="w-full border-t border-gray-300"></div>
+                      </div>
+                      <div className="relative flex justify-center">
+                        <button type="button" className="inline-flex items-center gap-x-1.5 rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                          Add Chapter
+                        </button>
                       </div>
                     </div>
+                  
                 </div>
 
                 <div className="w-4/6">
