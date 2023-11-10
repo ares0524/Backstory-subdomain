@@ -1,6 +1,7 @@
 "use client"
 
 import Quill from "react-quill"
+import 'react-quill/dist/quill.bubble.css';
 
   const formats = [
     'header',
