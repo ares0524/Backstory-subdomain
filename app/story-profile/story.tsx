@@ -67,19 +67,19 @@ export default function Story() {
                           <span>Chapter 10</span>
                           <span><small>7.2k</small></span>
                         </li>
+                        <li className="cursor-pointer">
+                          <div className="relative">
+                            <div className="absolute inset-0 flex items-center" aria-hidden="true">
+                              <div className="w-full border-t border-gray-300"></div>
+                            </div>
+                            <div className="relative flex justify-center">
+                              <button type="button" className="inline-flex items-center gap-x-1.5 rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                                Add Chapter
+                              </button>
+                            </div>
+                          </div>
+                        </li>
                     </ul>
-
-                    <div className="relative">
-                      <div className="absolute inset-0 flex items-center" aria-hidden="true">
-                        <div className="w-full border-t border-gray-300"></div>
-                      </div>
-                      <div className="relative flex justify-center">
-                        <button type="button" className="inline-flex items-center gap-x-1.5 rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-                          Add Chapter
-                        </button>
-                      </div>
-                    </div>
-                  
                 </div>
 
                 <div className="w-4/6">
