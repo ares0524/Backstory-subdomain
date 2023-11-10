@@ -7,27 +7,27 @@ export default function Manage() {
         {
           name: 'Leslie Alexander',
           imageUrl:
-            'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            '/assets/images/story-profile/user.png',
         },
         {
           name: 'Michael Foster',
           imageUrl:
-            'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            '/assets/images/story-profile/user.png',
         },
         {
           name: 'Dries Vincent',
           imageUrl:
-            'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            '/assets/images/story-profile/user.png',
         },
         {
           name: 'Lindsay Walton',
           imageUrl:
-            'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            '/assets/images/story-profile/user.png',
         },
         {
           name: 'Courtney Henry',
           imageUrl:
-            'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            '/assets/images/story-profile/user.png',
         }
     ]
 
@@ -75,7 +75,7 @@ export default function Manage() {
                         {people.map((person, key) => (
                             <li key={key} className="flex justify-between gap-x-6 py-5 items-center">
                                 <div className="flex min-w-0 gap-x-4">
-                                    <img className="h-12 w-12 flex-none rounded-full bg-gray-50" src={person.imageUrl} alt="" />
+                                    <Image width={48} height={48} className="h-12 w-12 flex-none rounded-full bg-gray-50" src={person.imageUrl} alt="" />
                                     <div className="min-w-0 items-center flex">
                                         <p className="text-md font-semibold leading-6 text-gray-300">{person.name}</p>
                                     </div>
