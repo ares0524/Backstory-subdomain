@@ -77,7 +77,7 @@ export default function Story() {
                           <label htmlFor="chapter-title" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Chapter Title</label>
                       </div>
                       <textarea placeholder="Chapter description here..." cols={3} className="w-1/2 mb-3 text-sm bg-[#2f2f2f] border-[1px] p-1 rounded-md"></textarea>
-                      <Quill modules={{ toolbar:['bold', 'underline', 'italic']}} formats={formats}></Quill>
+                      <Quill modules={{ toolbar:['bold', 'underline', 'italic']}} formats={formats} theme="bubble"></Quill>
                   </div>
                 </div>
             </div>
