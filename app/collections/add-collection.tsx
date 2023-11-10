@@ -35,6 +35,13 @@ export default function Drawer({ isOpen, setIsOpen }: DrawerProps) {
                 <input type="hidden" />
 
                 <button className="text-white bg-blue-700 w-full mt-10 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add Collection</button>
+
+                <div className="relative flex items-center justify-center w-full mt-6 border border-t">
+                    <div className="absolute px-5 bg-[#2f2f2f]">Then</div>
+                </div>
+
+                <p className="text-center text-white">Once you've created your collection, add cover art for it and create the first story. To publish a collection's stories you must first publish the collection.</p>
+
             </div>
         </div>
       </section>
