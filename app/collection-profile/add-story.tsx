@@ -60,7 +60,7 @@ export default function Drawer({ isOpen, setIsOpen }: DrawerProps) {
                     <div className="absolute px-5 bg-[#2f2f2f]">Then</div>
                 </div>
 
-                <p className="text-center text-white">Once you've created your story, add the author who is going to write it and upload the cover art for publishing.</p>
+                <p className="text-center text-white">Once you&apos;ve created your story, add the author who is going to write it and upload the cover art for publishing.</p>
                 
             </div>
         </div>

@@ -41,7 +41,7 @@ export default function Drawer({ isOpen, setIsOpen }: DrawerProps) {
                     <div className="absolute px-5 bg-[#2f2f2f]">Then</div>
                 </div>
 
-                <p className="text-center text-white">Once you've created your collection, add cover art for it and create the first story. To publish a collection's stories you must first publish the collection.</p>
+                <p className="text-center text-white">Once you&apos;ve created your collection, add cover art for it and create the first story. To publish a collection&apos;s stories you must first publish the collection.</p>
 
             </div>
         </div>
