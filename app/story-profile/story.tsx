@@ -26,7 +26,8 @@ export default function Story() {
         <>
             <div className="flex w-full">
                 <div className="w-1/6">
-                    <ul className="mt-2 space-y-1 list-decimal list-inside p-4 mb-3 sticky top-0">
+                    <div className="sticky top-50px">
+                      <ul className="mt-2 space-y-1 list-decimal list-inside p-4 mb-3">
                         <li className="cursor-pointer hover:text-gray-300 flex justify-between">
                           <span>Chapter 1</span>
                           <span><small>6.9k</small></span>
@@ -67,19 +68,19 @@ export default function Story() {
                           <span>Chapter 10</span>
                           <span><small>7.2k</small></span>
                         </li>
-                    </ul>
+                      </ul>
 
-                    <div className="relative">
-                      <div className="absolute inset-0 flex items-center" aria-hidden="true">
-                        <div className="w-full border-t border-gray-300"></div>
-                      </div>
-                      <div className="relative flex justify-center">
-                        <button type="button" className="inline-flex items-center gap-x-1.5 rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-                          Add Chapter
-                        </button>
+                      <div className="relative">
+                        <div className="absolute inset-0 flex items-center" aria-hidden="true">
+                          <div className="w-full border-t border-gray-300"></div>
+                        </div>
+                        <div className="relative flex justify-center">
+                          <button type="button" className="inline-flex items-center gap-x-1.5 rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                            Add Chapter
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  
                 </div>
 
                 <div className="w-4/6">
