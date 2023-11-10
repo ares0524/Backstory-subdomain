@@ -26,7 +26,7 @@ export default function Story() {
         <>
             <div className="flex w-full">
                 <div className="w-1/6 sticky top-0">
-                    <ul className="mt-2 space-y-1 list-decimal list-inside p-4 border-b-2 border-gray-600 rounded-md" style="list-style-type: none;">
+                    <ul className="mt-2 space-y-1 list-decimal list-inside p-4 border-b-2 border-gray-600 rounded-md">
                         <li className="cursor-pointer hover:text-gray-300 flex justify-between">
                           <span>Chapter 1</span>
                           <span><small>6.9k</small></span>
