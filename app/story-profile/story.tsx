@@ -67,6 +67,7 @@ export default function Story() {
                           <span><small>7.2k</small></span>
                         </li>
                     </ul>
+                    <button className="text-white w-full mb-4 bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none">Add Chapter</button>
                 </div>
 
                 <div className="w-5/6">
