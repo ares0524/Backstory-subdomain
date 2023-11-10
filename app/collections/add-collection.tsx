@@ -23,7 +23,8 @@ export default function Drawer({ isOpen, setIsOpen }: DrawerProps) {
           {/* <header className="p-4 font-bold text-lg">Header</header> */}
         {/* </article> */}
         <div className="py-5 px-5">
-            <p className="text-3xl text-center mt-20">Add Collection</p>
+            <p className="text-3xl text-center mt-20 mb-5 text-white">Add Collection</p>
+            <p className="text-center text-white">Add a new collection of stories to your world</p>
             <div className="relative z-0 w-full mb-3 group">
                 <div className="mt-10">
                   <input type="text" name="chapter-title" id="chapter-title" className="block py-2.5 px-0 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
