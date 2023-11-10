@@ -21,6 +21,24 @@ export default function Stats() {
                         </p>
                         <h6 className="text-4xl font-bold lg:text-5xl xl:text-6xl">7.2K</h6>
                     </div>
+                    <div className="text-center md:border-r">
+                        <p className="text-sm font-medium tracking-widest text-gray-400 lg:text-base">
+                            Longest Chapter
+                        </p>
+                        <h6 className="text-4xl font-bold lg:text-5xl xl:text-6xl">9k</h6>
+                        <p className="text-sm font-medium tracking-widest text-gray-400 lg:text-base">
+                            Chapter 4
+                        </p>
+                    </div>
+                    <div className="text-center md:border-r">
+                        <p className="text-sm font-medium tracking-widest text-gray-400 lg:text-base">
+                            Shortest Chapter
+                        </p>
+                        <h6 className="text-4xl font-bold lg:text-5xl xl:text-6xl">5k</h6>
+                        <p className="text-sm font-medium tracking-widest text-gray-400 lg:text-base">
+                            Chapter 7
+                        </p>
+                    </div>
                 </div>
             </div>
         </>
