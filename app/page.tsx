@@ -1,7 +1,12 @@
+"use client"
+
 import Image from 'next/image'
-import Link from 'next/link'
 
 export default function Home() {
+  const goToBackstory = () => {
+    window.location.href = process.env.MAIN_DOMAIN + '/login?stuff-page-login'
+  }
+  
   return (
     <>
         <a href="/" className="flex items-center auth-logo">
@@ -20,12 +25,13 @@ export default function Home() {
                     </div>
                         
                       <div>
-                        <button
-                            type="submit"
-                            className="w-full px-4 py-3 font-bold text-white bg-indigo-500 rounded-md hover:bg-indigo-600 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700"
-                        >
-                          Login with BackStory
-                        </button>
+                          <button
+                              type="submit"
+                              onClick={() => goToBackstory()}
+                              className="w-full px-4 py-3 font-bold text-white bg-indigo-500 rounded-md hover:bg-indigo-600 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700"
+                          >
+                            Login with BackStory
+                          </button>
                       </div>
                 </div>
             </div>
