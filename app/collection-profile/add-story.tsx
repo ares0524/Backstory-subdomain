@@ -46,7 +46,7 @@ export default function Drawer({ isOpen, setIsOpen }: DrawerProps) {
                 <div className="pt-10">
                   <label htmlFor="underline_select" className="sr-only">Age</label>
                   <select id="underline_select" className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
-                      <option selected>Age</option>
+                      <option selected>Age Group</option>
                       <option value="Adult">Adult</option>
                       <option value="Everyone">Everyone</option>
                   </select>
@@ -56,8 +56,8 @@ export default function Drawer({ isOpen, setIsOpen }: DrawerProps) {
 
                 <button className="text-white bg-blue-700 w-full mt-10 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add Story</button>
 
-                <div className="relative flex items-center justify-center w-full mt-6 border border-t">
-                    <div className="absolute px-5 bg-[#2f2f2f]">Then</div>
+                <div className="relative flex items-center justify-center w-full my-6 border border-t">
+                    <div className="absolute px-5 bg-[#2f2f2f] text-white">Then</div>
                 </div>
 
                 <p className="text-center text-white">Once you&apos;ve created your story, add the author who is going to write it and upload the cover art for publishing.</p>
