@@ -1,6 +1,19 @@
+"use client"
+
+import { useEffect } from "react";
 import Header from "../components/layout/_header";
 
 export default function Dashboard() {
+    useEffect(() => {
+        const searchParams = new URLSearchParams(window.location.search);
+        const JWT = searchParams.get('redirect_url')?.toString();
+        
+        if (JWT) {
+            localStorage.setItem('JWT', JWT);
+            history.pushState(null, '', process.env.SUB_DOMAIN +'/dashboard');
+        }
+    }, [])
+
     return (
         <>
             <Header isLoggedIn={true} />
