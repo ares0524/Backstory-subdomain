@@ -1,9 +1,33 @@
+import { useEffect } from "react";
+import { useDispatch } from "@/store/store";
+import { addCollection } from "@/store/collection/CollectionSlice";
+
 type DrawerProps = {
     isOpen: boolean;
     setIsOpen: (isOpen: boolean) => void;
 }
 
 export default function Drawer({ isOpen, setIsOpen }: DrawerProps) {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    document.getElementById('addCollection')?.addEventListener('click', addCollectionFunc)
+  }, [])
+
+  const addCollectionFunc = (e: Event) => {
+    e.preventDefault();
+
+    const title_el = document.getElementById('chapter-title') as HTMLInputElement;
+    const desc_el = document.getElementById('description') as HTMLTextAreaElement;
+
+    const data = {
+      name: title_el.value,
+      description: desc_el.value
+    }
+
+    dispatch(addCollection(data))
+  }
+
   return (
     <main
       className={
@@ -22,7 +46,7 @@ export default function Drawer({ isOpen, setIsOpen }: DrawerProps) {
         {/* <article className="relative w-screen max-w-lg pb-10 flex flex-col space-y-6 overflow-y-scroll h-full"> */}
           {/* <header className="p-4 font-bold text-lg">Header</header> */}
         {/* </article> */}
-        <div className="py-5 px-5">
+        <form className="py-5 px-5">
             <p className="text-3xl text-center mt-20 mb-5 text-white">Add Collection</p>
             <p className="text-center text-white">Add a new collection of stories to your world</p>
             <div className="relative z-0 w-full mb-3 group">
@@ -31,20 +55,20 @@ export default function Drawer({ isOpen, setIsOpen }: DrawerProps) {
                   <label htmlFor="chapter-title" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Collection Title</label>
                 </div>
 
-                <textarea placeholder="Collection description here..." rows={5} className="text-sm w-full mt-10 bg-[#2f2f2f] border-[1px] p-1 rounded-md"></textarea>
+                <textarea placeholder="Collection description here..." id="description" rows={5} className="text-sm w-full mt-10 bg-[#2f2f2f] border-[1px] p-1 rounded-md" required></textarea>
 
                 <input type="hidden" />
 
-                <button className="text-white bg-blue-700 w-full mt-10 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add Collection</button>
+                <button type="submit" id="addCollection" className="text-white bg-blue-700 w-full mt-10 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add Collection</button>
 
                 <div className="relative flex items-center justify-center w-full my-6 border border-t">
                     <div className="absolute px-5 bg-[#2f2f2f] text-white">Then</div>
                 </div>
 
-                <p className="text-center text-white">Once you&apos;ve created your collection, add cover art for it and create the first story. To publish a collection&apos;s stories you must first publish the collection.</p>
+                <p className="text-center text-white mt-5">Once you&apos;ve created your collection, add cover art for it and create the first story. To publish a collection&apos;s stories you must first publish the collection.</p>
 
             </div>
-        </div>
+        </form>
       </section>
       <section
         className=" w-screen h-full cursor-pointer "
