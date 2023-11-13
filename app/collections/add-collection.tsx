@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { useDispatch } from "@/store/store";
-import { addCollection } from "@/store/collection/CollectionSlice";
+import { useDispatch } from "@/app/store/store";
+import { addCollection } from "@/app/store/collection/CollectionSlice";
 
 type DrawerProps = {
     isOpen: boolean;

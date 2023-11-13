@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import 'react-quill/dist/quill.snow.css'
 import { Provider } from 'react-redux'
-import store from '@/store/store'
+import store from '@/app/store/store'
 import 'react-toastify/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
 

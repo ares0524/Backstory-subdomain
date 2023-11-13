@@ -11,8 +11,8 @@ const initialState: StateType = {
     loading: true
 }
 
-export const CollectionSlice = createSlice({
-    name: 'collection',
+export const StorySlice = createSlice({
+    name: 'story',
     initialState,
     reducers: {
         setLoading: (state: StateType, action) => {
@@ -21,10 +21,12 @@ export const CollectionSlice = createSlice({
     }
 })
 
-export const { setLoading } = CollectionSlice.actions;
+export const { setLoading } = StorySlice.actions;
 
-export const addCollection = (data: any) =>async (dispatch: AppDispatch) => {    
-    axios.post(process.env.SERVER_API + '/collection/add', data)
+export const addStory = (data: any) =>async (dispatch: AppDispatch) => {    
+    console.log(data);
+    
+    axios.post(process.env.SERVER_API + '/story/add/', data)
         .then((res) => {
             
             if (res.data.status == 'fail') {
@@ -47,4 +49,4 @@ export const addCollection = (data: any) =>async (dispatch: AppDispatch) => {
         })
 }
 
-export default CollectionSlice.reducer;
+export default StorySlice.reducer;
