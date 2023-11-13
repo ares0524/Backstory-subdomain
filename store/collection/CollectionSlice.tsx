@@ -24,7 +24,7 @@ export const CollectionSlice = createSlice({
 export const { setLoading } = CollectionSlice.actions;
 
 export const addCollection = (data: any) =>async (dispatch: AppDispatch) => {    
-    axios.post(process.env.SERVER_API + '/collection/add', data)
+    axios.post(process.env.SERVER_API + '/collection/add/', data)
         .then((res) => {
             
             if (res.data.status == 'fail') {
