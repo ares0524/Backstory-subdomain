@@ -6,15 +6,18 @@ import {
   useSelector as useAppSelector,
   TypedUseSelectorHook,
 } from "react-redux";
+import StorySlice from "./story/StorySlice";
 
 export const store = configureStore({
   reducer: {
-    collection: CollectionSlice
+    collection: CollectionSlice,
+    story: StorySlice
   },
 });
 
 const rootReducer = combineReducers({
-  collection: CollectionSlice
+  collection: CollectionSlice,
+  story: StorySlice
 });
 
 export type AppState = ReturnType<typeof rootReducer>;
