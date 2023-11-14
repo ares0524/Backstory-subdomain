@@ -1,7 +1,11 @@
 "use client"
 
 import { useEffect } from "react";
+import Cookies from 'js-cookie';
+import axios from "axios";
 import Header from "../components/layout/_header";
+import { toast } from "react-toastify";
+import jwt from 'jsonwebtoken'
 
 export default function Dashboard() {
     useEffect(() => {
@@ -9,14 +13,30 @@ export default function Dashboard() {
         const JWT = searchParams.get('redirect_url')?.toString();
         
         if (JWT) {
-            localStorage.setItem('JWT', JWT);
+            // localStorage.setItem('JWT', JWT);
+            Cookies.set('token', JWT, {expires: 1, secure: true})
             history.pushState(null, '', process.env.SUB_DOMAIN +'/dashboard');
+
+            const data = {
+                jwt: JWT
+            }
+
+            console.log(data);
+            
+
+            axios.post(process.env.SERVER_API + '/user/login', data)
+                .then((res) => {
+                    if (res.data.status == 401) {
+
+                    }
+                    console.log(res);
+                })
         }
     }, [])
 
     return (
         <>
-            <Header isLoggedIn={true} />
+            <Header />
 
             <div className="w-full pt-[80px] px-[40px]">
                 <nav className="flex" aria-label="Breadcrumb">
