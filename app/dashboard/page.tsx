@@ -17,7 +17,7 @@ export default function Dashboard() {
             Cookies.set('token', JWT, {expires: 1, secure: true})
             history.pushState(null, '', process.env.SUB_DOMAIN +'/dashboard');
 
-            axios.get(process.env.SERVER_API + '/user/login?token=' + JWT, {
+            axios.get('/serverAPI/user/login?token=' + JWT, {
                 headers: {
                     'Content-Type': 'application/json'
                 },
