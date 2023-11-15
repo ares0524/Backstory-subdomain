@@ -1,16 +1,39 @@
 "use client"
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../components/layout/_header"
 import Detail from "./detail";
 import Stats from "./stats";
 import Manage from "./manage";
 import StoriesList from "./stories-list";
 import Drawer from "./add-story";
+import { useDispatch, useSelector, AppState } from "../store/store";
+import { getStories } from "../store/story/StorySlice";
+import { setSelectedCollection } from "../store/collection/CollectionSlice";
 
 export default function CollectionProfile() {
     const [openTab, setOpenTab] = useState(1);
     const [openAddStorySidebar, setOpenAddStorySidebar] = useState(false);
+    const { collections } = useSelector((state: AppState) => state.collection)
+    const dispatch = useDispatch();
+    const { selectedCollection } = useSelector((state: AppState) => state.collection);
+
+    useEffect(() => {
+        const searchParams = new URLSearchParams(window.location.search);
+        const collection_id = searchParams.get('collection_id');
+        
+        let stories_id = '' as String;
+        collections.map((item) => {
+            if (item.id == Number(collection_id)) {
+                stories_id = item.stories;
+                dispatch(setSelectedCollection(item));
+            }
+        })
+
+        dispatch(getStories(stories_id?.toString()));
+    }, [collections])
+
+
     return (
         <>
             <Header />
@@ -45,7 +68,7 @@ export default function CollectionProfile() {
                 </nav>
 
                 <div className="py-[20px] flex justify-between items-center">
-                    <p className="text-2xl font-bold">Collection Name</p>
+                    <p className="text-2xl font-bold">{selectedCollection.name}</p>
                     <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onClick={() => setOpenAddStorySidebar((openAddStorySidebar) => !openAddStorySidebar)}>Add Story</button>
                 </div>
 

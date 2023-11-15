@@ -1,6 +1,11 @@
 import Image from "next/image";
+import { useSelector, AppState } from "../store/store";
+import changeDateFormat from "../components/utilz/custom-func";
+import { storiesCount } from "../components/utilz/custom-func";
 
 export default function Detail() {
+    const { selectedCollection } = useSelector((state: AppState) => state.collection);
+
     return (
         <div className="flex">
             <div className="w-1/4"></div>
@@ -16,19 +21,19 @@ export default function Detail() {
                     <dl className="divide-y divide-gray-100">
                         <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                             <dt className="text-sm font-medium leading-6 text-white">Name</dt>
-                            <dd className="mt-1 text-sm leading-6 text-gray-300 sm:col-span-2 sm:mt-0">Lorem Ipsum</dd>
+                            <dd className="mt-1 text-sm leading-6 text-gray-300 sm:col-span-2 sm:mt-0">{selectedCollection.name}</dd>
                         </div>
                         <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                             <dt className="text-sm font-medium leading-6 text-white">Description</dt>
-                            <dd className="mt-1 text-sm leading-6 text-gray-300 sm:col-span-2 sm:mt-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit</dd>
+                            <dd className="mt-1 text-sm leading-6 text-gray-300 sm:col-span-2 sm:mt-0">{selectedCollection.description}</dd>
                         </div>
                         <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                             <dt className="text-sm font-medium leading-6 text-white">Stories</dt>
-                            <dd className="mt-1 text-sm leading-6 text-gray-300 sm:col-span-2 sm:mt-0">23</dd>
+                            <dd className="mt-1 text-sm leading-6 text-gray-300 sm:col-span-2 sm:mt-0">{storiesCount(selectedCollection.stories)}</dd>
                         </div>
                         <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                             <dt className="text-sm font-medium leading-6 text-white">Created Date</dt>
-                            <dd className="mt-1 text-sm leading-6 text-gray-300 sm:col-span-2 sm:mt-0">15.10.2023</dd>
+                            <dd className="mt-1 text-sm leading-6 text-gray-300 sm:col-span-2 sm:mt-0">{changeDateFormat(selectedCollection.created_at)}</dd>
                         </div>
                     </dl>
                 </div>
