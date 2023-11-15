@@ -27,7 +27,7 @@ export const addStory = (data: any) =>async (dispatch: AppDispatch) => {
     console.log(data);
 
     axios.defaults.withCredentials = true;
-    axios.post(process.env.SERVER_API + '/story/add/', data, {
+    axios.post('/serverAPI/story/add/', data, {
         headers: {
             'Content-Type': 'application/json'
         },
