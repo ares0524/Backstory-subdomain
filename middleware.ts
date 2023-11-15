@@ -25,7 +25,7 @@ export const config = {
     '/dashboard/:path*',
     '/collection-profile/:path*',
     '/collections/:path*',
-    '/story-profile/:path*',
+    '/story/:path*',
     '/world-history/:path*',
   ]
 }
