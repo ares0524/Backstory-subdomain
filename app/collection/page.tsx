@@ -166,7 +166,7 @@ export default function CollectionProfile() {
                             <div className="tab-content tab-space">
                                 <div className={openTab === 1 ? "block" : "hidden"} id="link1">
                                     <div className="pt-2">
-                                        <StoriesList />
+                                        <StoriesList isOpen={openAddStorySidebar} setIsOpen={setOpenAddStorySidebar} />
                                     </div>
                                 </div>
                                 <div className={openTab === 2 ? "block" : "hidden"} id="link2">

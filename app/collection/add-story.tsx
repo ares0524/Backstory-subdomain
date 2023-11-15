@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useDispatch } from "../store/store";
+import { AppState, useDispatch, useSelector } from "../store/store";
 import { addStory } from "../store/story/StorySlice";
 import { toast } from "react-toastify";
 
@@ -10,6 +10,7 @@ type DrawerProps = {
 
 export default function Drawer({ isOpen, setIsOpen }: DrawerProps) {
   const dispatch = useDispatch();
+  const { selectedCollection } = useSelector((state: AppState) => state.collection)
 
   useEffect(() => {
     document.getElementById('addStoryBtn')?.addEventListener('click', addStoryFunc);
@@ -30,10 +31,12 @@ export default function Drawer({ isOpen, setIsOpen }: DrawerProps) {
       return;
     }
 
+    let collection_el = document.getElementById('collection_id') as HTMLInputElement;
     const data = {
       name: title_el.value,
       genre: genre_el.value,
-      age_group: age_el.value
+      age_group: age_el.value,
+      collection: collection_el.value
     }
 
     dispatch(addStory(data));
@@ -87,7 +90,7 @@ export default function Drawer({ isOpen, setIsOpen }: DrawerProps) {
                   </select>
                 </div>
 
-                <input type="hidden" />
+                <input type="hidden" id="collection_id" value={selectedCollection.id.toString()} />
 
                 <button type="submit" id="addStoryBtn" className="text-white bg-blue-700 w-full mt-10 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add Story</button>
 
