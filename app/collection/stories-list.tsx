@@ -13,7 +13,7 @@ export default function StoriesList({ isOpen, setIsOpen }: DrawerProps) {
     const { stories } = useSelector((state: AppState) => state.story);
 
     const goToStoryProfilePage = () => {
-        window.location.href = '/story-profile';
+        window.location.href = '/story';
     }
 
     return (
