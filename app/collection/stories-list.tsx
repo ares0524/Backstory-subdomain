@@ -16,8 +16,8 @@ export default function StoriesList() {
             <div className="flex w-full">
                 <ul className="w-full divide-y divide-gray-200 dark:divide-gray-700">
                     {
-                        stories?.map((item: any) => (
-                            <li className="pb-3 sm:pb-4">
+                        stories?.map((item: any, key) => (
+                            <li className="pb-3 sm:pb-4" key={key}>
                                 <div className="flex items-center space-x-4">
                                     <div className="flex-shrink-0">
                                         <Image width={60} height={80} src="/assets/images/story-profile/defaultBook.png" style={{objectFit:'cover', height:'80px'}} alt="Image 1" />

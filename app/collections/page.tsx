@@ -58,8 +58,8 @@ export default function CollectionProfile() {
 
                 <ul className="w-full divide-y divide-gray-200 dark:divide-gray-700">
                     {
-                        collections?.map((item: any) => (
-                            <li className="pb-3 sm:py-4">
+                        collections?.map((item: any, key) => (
+                            <li className="pb-3 sm:py-4" key={key}>
                                 <div className="flex items-center space-x-2">
                                     <div className="flex-1 min-w-0">
                                         <p className="text-xl font-bold text-gray-900 truncate dark:text-white hover:cursor-pointer" onClick={() => goToCollectionProfilePage(item?.id)}>
