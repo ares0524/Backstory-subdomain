@@ -3,12 +3,29 @@ import { AppDispatch } from "../store";
 import axios from "axios";
 import { toast } from "react-toastify";
 
+interface Story {
+    name: string,
+    description: string,
+    genre: string,
+    type: string,
+    collection: string,
+    author: string,
+    chapters: string,
+    word_count: number,
+    cover_imave: string,
+    title_color: string,
+    age_group: string,
+    start_time: Date
+}
+
 interface StateType {
-    loading: boolean
+    loading: boolean,
+    stories: Story[]
 }
 
 const initialState: StateType = {
-    loading: true
+    loading: true,
+    stories: []
 }
 
 export const StorySlice = createSlice({
@@ -17,11 +34,14 @@ export const StorySlice = createSlice({
     reducers: {
         setLoading: (state: StateType, action) => {
             state.loading = action.payload;
+        },
+        setStories: (state: StateType, action) => {            
+            state.stories = action.payload
         }
     }
 })
 
-export const { setLoading } = StorySlice.actions;
+export const { setLoading, setStories } = StorySlice.actions;
 
 export const addStory = (data: any) =>async (dispatch: AppDispatch) => {    
     console.log(data);
@@ -51,6 +71,21 @@ export const addStory = (data: any) =>async (dispatch: AppDispatch) => {
     .catch(err => {
         console.log("error => ", err);
     })
+}
+
+export const getStories = (stories_id: any) =>async (dispatch:AppDispatch) => {
+    const parsed_id = JSON.parse(stories_id?.toString() || '{}');
+    const data = {
+        stories_id: parsed_id
+    }
+    axios.post('serverAPI/story/get', data)
+        .then((res) => {
+            if (res.data.status == 'success') {
+                dispatch(setStories(res.data.stories))
+            } else {
+                console.log(res.data.msg);
+            }
+        })
 }
 
 export default StorySlice.reducer;
