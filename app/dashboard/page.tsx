@@ -17,14 +17,7 @@ export default function Dashboard() {
             Cookies.set('token', JWT, {expires: 1, secure: true})
             history.pushState(null, '', process.env.SUB_DOMAIN +'/dashboard');
 
-            const data = {
-                jwt: JWT
-            }
-
-            console.log(data);
-            
-
-            axios.post(process.env.SERVER_API + '/user/login', data)
+            axios.get(process.env.SERVER_API + '/user/login?token=' + JWT)
                 .then((res) => {
                     if (res.data.status == 401) {
 
