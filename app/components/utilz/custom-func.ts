@@ -21,8 +21,13 @@ export function totalWordCount (stories: any) {
 export function totalChapters (stories: any) {
     let sum = 0;
     stories.map((story: any) => {
-        const parsed = JSON.parse(story.chapters?.toString() || '{}');
-        sum += parsed.length;
-    })
+        try {
+          const parsed = JSON.parse(story.chapters?.toString() || '{}');
+          sum += parsed.length;
+        } catch (error) {
+          console.error('Error parsing JSON:', error);
+          // Handle the error gracefully
+        }
+    });
     return sum;
 }
