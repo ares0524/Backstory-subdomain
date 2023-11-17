@@ -9,9 +9,7 @@ export default function Detail() {
     return (
         <div className="flex">
             <div className="w-1/4"></div>
-            <div className="w-1/4">
-                <Image width={300} height={444} alt="Story Cover" src='/assets/images/dashboard/1.png' style={{objectFit:'cover', height:'444px'}} />
-            </div>
+            <div className="w-1/4"></div>
             <div className="w-1/4 m-auto">
                 <div className="px-4 sm:px-0">
                     <h3 className="text-base font-semibold leading-7 text-white">Collection Information</h3>

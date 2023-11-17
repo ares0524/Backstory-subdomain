@@ -14,8 +14,13 @@ export default function StoriesList({ isOpen, setIsOpen }: DrawerProps) {
     const { stories } = useSelector((state: AppState) => state.story);
     const router = useRouter();
 
+<<<<<<< HEAD
     const goToStoryProfilePage = (id: any) => {
         router.push('/story?story_id=' + id)
+=======
+    const goToStoryProfilePage = () => {
+        window.location.href = '/story';
+>>>>>>> e98fa56298aeb4393e2ce241a1d8177e442bdaf9
     }
 
     return (
