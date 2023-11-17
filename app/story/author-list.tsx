@@ -1,5 +1,5 @@
 
-import { Fragment, useState } from 'react'
+import { ChangeEvent, Fragment, useState } from 'react'
 import { Combobox, Dialog, Transition } from '@headlessui/react'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { UsersIcon } from '@heroicons/react/24/outline'
@@ -87,7 +87,7 @@ export default function ManageAuthor() {
                     <Combobox.Input
                       className="h-12 w-full border-0 bg-transparent pl-11 pr-4 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
                       placeholder="Search..."
-                      onChange={(event: Event) => setQuery(event.target?.value)}
+                      onChange={(event: any) => setQuery(event.target?.value)}
                     />
                   </div>
 
