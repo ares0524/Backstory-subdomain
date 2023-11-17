@@ -1,12 +1,15 @@
 "use client"
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../components/layout/_header"
 import dynamic from "next/dynamic";
 import Detail from "./detail";
 import ChartTemplate from "../components/chart/doughnut";
 import Stats from "./stats";
-import Manage from "./manage";
+// import ManageAuthor from "./manage-author";
+import ManageAuthor from "./author-list";
+import UpdateDetail from "./update-detail";
+import ManageCover from "./manage-cover";
 
 const DynamicStoryComponent = dynamic(() => import('./story'), {
     ssr: false
@@ -14,6 +17,7 @@ const DynamicStoryComponent = dynamic(() => import('./story'), {
 
 export default function CollectionProfile() {
     const [openTab, setOpenTab] = useState(1);
+    
     return (
         <>
             <Header />
@@ -60,19 +64,41 @@ export default function CollectionProfile() {
                     <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Publish</button>
                 </div>
 
-                {/* <div className="w-full">
-                    <div className="w-1/6">
-
+                <div className="md:flex">
+                    <div className="relative flex flex-col min-w-0 break-words w-full mb-6 rounded">
+                        <div className="py-3 flex-auto">
+                            <div className="tab-content tab-space">
+                                <div className={openTab === 1 ? "block" : "hidden"} id="link1">
+                                    <div className="pt-2">
+                                        <DynamicStoryComponent />
+                                    </div>
+                                </div>
+                                <div className={openTab === 2 ? "block" : "hidden"} id="link2">
+                                    <div className="pt-2">
+                                        <Detail />
+                                    </div>
+                                </div>
+                                <div className={openTab === 3 ? "block" : "hidden"} id="link3">
+                                    <div className="pt-2">
+                                        <UpdateDetail />
+                                    </div>
+                                </div>
+                                <div className={openTab === 4 ? "block" : "hidden"} id="link4">
+                                    <Stats />
+                                </div>
+                                <div className={openTab === 5 ? "block" : "hidden"} id="link5">
+                                    <ManageCover />
+                                </div>
+                                <div className={openTab === 6 ? "block" : "hidden"} id="link6">
+                                    <ManageAuthor />
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div> */}
 
-                <div className="flex flex-wrap">
-                    <div className="w-full">
-                        <ul
-                            className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"
-                            role="tablist"
-                        >
-                            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                    <div className="sticky top-[60px]">
+                        <ul className="flex-column space-y space-y-4 text-sm font-medium text-gray-400 mb-4 md:mb-0 mt-2 space-y-1 list-inside p-4 pr-0 mb-3 sticky top-[60px]">
+                            <li className="-mb-px w-[150px] last:mr-0 flex-auto text-center">
                                 <a
                                     className={
                                     "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
@@ -91,7 +117,7 @@ export default function CollectionProfile() {
                                     Story
                                 </a>
                             </li>
-                            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                            <li className="-mb-px w-[150px] last:mr-0 flex-auto text-center">
                                 <a
                                     className={
                                     "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
@@ -110,7 +136,7 @@ export default function CollectionProfile() {
                                     Details
                                 </a>
                             </li>
-                            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                            <li className="-mb-px w-[150px] last:mr-0 flex-auto text-center">
                                 <a
                                     className={
                                     "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
@@ -126,10 +152,10 @@ export default function CollectionProfile() {
                                     href="#link3"
                                     role="tablist"
                                 >
-                                    Stats
+                                    Update Details
                                 </a>
                             </li>
-                            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                            <li className="-mb-px w-[150px] last:mr-0 flex-auto text-center">
                                 <a
                                     className={
                                     "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
@@ -145,33 +171,50 @@ export default function CollectionProfile() {
                                     href="#link4"
                                     role="tablist"
                                 >
-                                    Manage
+                                    Stats
+                                </a>
+                            </li>
+                            <li className="-mb-px w-[150px] last:mr-0 flex-auto text-center">
+                                <a
+                                    className={
+                                    "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
+                                    (openTab === 5
+                                        ? "text-white bg-blueGray-600"
+                                        : "text-blueGray-600 bg-gray-700")
+                                    }
+                                    onClick={e => {
+                                    e.preventDefault();
+                                    setOpenTab(5);
+                                    }}
+                                    data-toggle="tab"
+                                    href="#link5"
+                                    role="tablist"
+                                >
+                                    Manage Cover
+                                </a>
+                            </li>
+                            <li className="-mb-px w-[150px] last:mr-0 flex-auto text-center">
+                                <a
+                                    className={
+                                    "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
+                                    (openTab === 6
+                                        ? "text-white bg-blueGray-600"
+                                        : "text-blueGray-600 bg-gray-700")
+                                    }
+                                    onClick={e => {
+                                    e.preventDefault();
+                                    setOpenTab(6);
+                                    }}
+                                    data-toggle="tab"
+                                    href="#link6"
+                                    role="tablist"
+                                >
+                                    Manage Author
                                 </a>
                             </li>
                         </ul>
-                    <div className="relative flex flex-col min-w-0 break-words w-full mb-6 rounded">
-                        <div className="py-3 flex-auto">
-                            <div className="tab-content tab-space">
-                                <div className={openTab === 1 ? "block" : "hidden"} id="link1">
-                                    <div className="pt-2">
-                                        <DynamicStoryComponent />
-                                    </div>
-                                </div>
-                                <div className={openTab === 2 ? "block" : "hidden"} id="link2">
-                                    <div className="pt-2">
-                                        <Detail />
-                                    </div>
-                                </div>
-                                <div className={openTab === 3 ? "block" : "hidden"} id="link3">
-                                    <Stats />
-                                </div>
-                                <div className={openTab === 4 ? "block" : "hidden"} id="link4">
-                                    <Manage />
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                    </div>
+                    
                 </div>
             </div>
         </>

@@ -1,6 +1,15 @@
 import Image from "next/image";
+import { AppState, useSelector } from "../store/store";
+import changeDateFormat from "../components/utilz/custom-func";
 
 export default function Detail() {
+    const {selectedStory} = useSelector((state: AppState) => state.story);
+
+    const firstLetterCap = (data: string) => {
+        const capitalized = data.charAt(0).toUpperCase() + data.slice(1);
+        return capitalized;
+    }
+
     return (
         <div className="flex">
             <div className="w-1/4"></div>
@@ -16,23 +25,23 @@ export default function Detail() {
                     <dl className="divide-y divide-gray-100">
                         <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                             <dt className="text-sm font-medium leading-6 text-white">Author</dt>
-                            <dd className="mt-1 text-sm leading-6 text-gray-300 sm:col-span-2 sm:mt-0">Jhon Doe</dd>
+                            <dd className="mt-1 text-sm leading-6 text-gray-300 sm:col-span-2 sm:mt-0">{selectedStory.author}</dd>
                         </div>
                         <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                             <dt className="text-sm font-medium leading-6 text-white">Genre</dt>
-                            <dd className="mt-1 text-sm leading-6 text-gray-300 sm:col-span-2 sm:mt-0">Adventure</dd>
+                            <dd className="mt-1 text-sm leading-6 text-gray-300 sm:col-span-2 sm:mt-0">{firstLetterCap(selectedStory.genre)}</dd>
                         </div>
                         <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                             <dt className="text-sm font-medium leading-6 text-white">Type</dt>
-                            <dd className="mt-1 text-sm leading-6 text-gray-300 sm:col-span-2 sm:mt-0">Novel</dd>
+                            <dd className="mt-1 text-sm leading-6 text-gray-300 sm:col-span-2 sm:mt-0">{firstLetterCap(selectedStory.type)}</dd>
                         </div>
                         <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                             <dt className="text-sm font-medium leading-6 text-white">Word Count</dt>
-                            <dd className="mt-1 text-sm leading-6 text-gray-300 sm:col-span-2 sm:mt-0">86k</dd>
+                            <dd className="mt-1 text-sm leading-6 text-gray-300 sm:col-span-2 sm:mt-0">{selectedStory.word_count}</dd>
                         </div>
                         <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                             <dt className="text-sm font-medium leading-6 text-white">Published Date</dt>
-                            <dd className="mt-1 text-sm leading-6 text-gray-300 sm:col-span-2 sm:mt-0">--</dd>
+                            <dd className="mt-1 text-sm leading-6 text-gray-300 sm:col-span-2 sm:mt-0">{changeDateFormat(selectedStory.created_at)}</dd>
                         </div>
                     </dl>
                 </div>

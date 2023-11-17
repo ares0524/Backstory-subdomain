@@ -4,6 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 interface Story {
+    id: Number,
     name: string,
     description: string,
     genre: string,
@@ -15,17 +16,41 @@ interface Story {
     cover_imave: string,
     title_color: string,
     age_group: string,
-    start_time: Date
+    start_time: Date,
+    created_at: Date,
+    read_count: Number,
+    sales: Number,
+    likes: Number,
 }
 
 interface StateType {
     loading: boolean,
-    stories: Story[]
+    stories: Story[],
+    selectedStory: Story
 }
 
 const initialState: StateType = {
     loading: true,
-    stories: []
+    stories: [],
+    selectedStory: {
+        id: 0,
+        name: '',
+        description: '',
+        genre: '',
+        type: '',
+        collection: '',
+        author: '',
+        chapters: '',
+        word_count: 0,
+        cover_imave: '',
+        title_color: '',
+        age_group: '',
+        start_time: new Date(),
+        created_at: new Date(),
+        read_count: 0,
+        sales: 0,
+        likes: 0,
+    }
 }
 
 export const StorySlice = createSlice({
@@ -37,11 +62,14 @@ export const StorySlice = createSlice({
         },
         setStories: (state: StateType, action) => {            
             state.stories = action.payload
-        }
+        },
+        setSelectedStory: (state: StateType, action) => {            
+            state.selectedStory = action.payload
+        },
     }
 })
 
-export const { setLoading, setStories } = StorySlice.actions;
+export const { setLoading, setStories, setSelectedStory } = StorySlice.actions;
 
 export const addStory = (data: any) =>async (dispatch: AppDispatch) => {    
     console.log(data);
@@ -78,12 +106,40 @@ export const getStories = (stories_id: any) =>async (dispatch:AppDispatch) => {
     const data = {
         stories_id: parsed_id
     }
-    axios.post('serverAPI/story/get', data)
+    axios.post('/serverAPI/story/get', data)
         .then((res) => {
             if (res.data.status == 'success') {
                 dispatch(setStories(res.data.stories))
             } else {
                 console.log(res.data.msg);
+            }
+        })
+}
+
+export const updateStory = (data: any) =>async (dispatch:AppDispatch) => {
+    axios.post('/serverAPI/story/update', data)
+        .then((res) => {
+            if (res.data.status == 'success') {
+                dispatch(setSelectedStory(res.data.story));
+                toast('Updated successfully!', {
+                    autoClose: 2000,
+                    type: 'success',
+                    theme: 'dark'
+                })
+            }
+        })
+}
+
+export const getStoryById = (id: any) =>async (dispatch:AppDispatch) => {
+    const data = {
+        id: id
+    }
+    axios.post('/serverAPI/story/getStoryById?id=', data)
+        .then((res) => {
+            if (res.data.status == 'success') {
+                dispatch(setSelectedStory(res.data.story));
+                console.log("res.data.story => ", res.data.story);
+                
             }
         })
 }

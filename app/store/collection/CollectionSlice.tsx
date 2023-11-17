@@ -87,5 +87,6 @@ export const getCollection = () =>async (dispatch: AppDispatch) => {
         })
 }
 
+
 export default CollectionSlice.reducer;
 

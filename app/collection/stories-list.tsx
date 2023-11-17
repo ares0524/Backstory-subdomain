@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { useSelector, AppState } from "../store/store";
 import changeDateFormat from "../components/utilz/custom-func";
+import { useRouter } from "next/navigation";
 
 type DrawerProps = {
     isOpen: boolean;
@@ -11,9 +12,10 @@ type DrawerProps = {
 
 export default function StoriesList({ isOpen, setIsOpen }: DrawerProps) {
     const { stories } = useSelector((state: AppState) => state.story);
+    const router = useRouter();
 
-    const goToStoryProfilePage = () => {
-        window.location.href = '/story-profile';
+    const goToStoryProfilePage = (id: any) => {
+        router.push('/story?story_id=' + id)
     }
 
     return (
@@ -31,7 +33,7 @@ export default function StoriesList({ isOpen, setIsOpen }: DrawerProps) {
                                                 <Image width={60} height={80} src="/assets/images/story-profile/defaultBook.png" style={{objectFit:'cover', height:'80px'}} alt="Image 1" />
                                             </div>
                                             <div className="flex-1 min-w-0">
-                                                <p className="text-xl font-bold text-gray-900 truncate dark:text-white">
+                                                <p className="text-xl font-bold text-gray-900 truncate dark:text-white cursor-pointer" onClick={() => goToStoryProfilePage(item.id)}>
                                                     {item.name}
                                                 </p>
                                                 <p className="text-sm text-gray-500 truncate dark:text-gray-400">
@@ -42,7 +44,7 @@ export default function StoriesList({ isOpen, setIsOpen }: DrawerProps) {
                                                 </p>
                                             </div>
                                             <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                                <button onClick={goToStoryProfilePage} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Manage</button>
+                                                <button onClick={() => goToStoryProfilePage(item.id)} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Manage</button>
                                             </div>
                                         </div>
                                     </li>
