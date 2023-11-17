@@ -23,7 +23,7 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     '/dashboard/:path*',
-    '/collection-profile/:path*',
+    '/collection/:path*',
     '/collections/:path*',
     '/story/:path*',
     '/world-history/:path*',

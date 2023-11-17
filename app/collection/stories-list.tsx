@@ -16,7 +16,7 @@ export default function StoriesList({ isOpen, setIsOpen }: DrawerProps) {
 
     const goToStoryProfilePage = (id: any) => {
         router.push('/story?story_id=' + id)
-    }
+
 
     return (
         <>
